@@ -89,13 +89,16 @@
 
 ## 项目页面展示
 ### 用户端（微信小程序）
-![用户登录界面](/images/login.png) ![首页界面](/images/index.jpg)  
-![剧本库界面](/images/jb.jpg) ![详情界面](/images/detail.jpg) 
-![个人界面](/images/personal.jpg)  ![剧本排行榜界面](/images/ranking.jpg) 
-![组队界面](/images/teamUp.jpg)  
+![用户登录界面](images/login.png) 
+![首页界面](images/index.jpg)  
+![剧本库界面](images/jb.jpg) 
+![详情界面](images/detail.jpg) 
+![个人界面](images/personal.jpg) 
+![剧本排行榜界面](images/ranking.jpg) 
+![组队界面](images/teamUp.jpg)  
 
 
 ### 商家端（Web管理后台）
-![剧本管理界面](/images/jbManage.jpg) ![用户管理界面](/images/usersManage.jpg) 
-![订单管理界面](/images/ddManage.jpg) ![数据统计界面](/images/data_stat.jpg) 
+![剧本管理界面](images/jbManage.jpg) ![用户管理界面](images/usersManage.jpg) 
+![订单管理界面](images/ddManage.jpg) ![数据统计界面](images/data_stat.jpg) 
 
