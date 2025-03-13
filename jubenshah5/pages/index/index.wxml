@@ -1,0 +1,54 @@
+<view class="container" style="background-image: url('https://wx4.sinaimg.cn/orj360/e60238a1ly1hvjg31h18oj20du0sgjsv.jpg');background-size:cover;">
+  <!-- 店铺信息 -->
+  <view class="header">
+    <image class="avatar" src="https://wx3.sinaimg.cn/mw690/e60238a1ly1hvjg2xr88ij20it0gadga.jpg" mode="aspectFill"></image>
+    <view class="shop-info">
+      <view class="shop-info2">
+        <text class="shop-name">谜影剧场</text>
+        <text class="shop-address">杭州市临安区杭电路666号</text>
+      </view>
+      <view class="contact-icons">
+        <image src="/pages/images/phone.png" class="icon" bindtap="callShop"></image>
+        <image src="/pages/images/weixin.png" class="icon" bindtap="contactWeChat"></image>
+      </view>
+    </view>
+  </view>
+  <view class="banner">
+    <view class="button-container">
+      <button class="left-button" bindtap="onLeftButtonTap"><p>剧本库 ></p>
+      <p class="text1">开启另一段人生剧本吧</p>
+      <image src="https://wx1.sinaimg.cn/orj360/e60238a1ly1hvjg4cral1j202y01smwz.jpg" class="juben-img"></image>
+      </button>
+      
+      
+      <view class="right-buttons">
+        <button class="right-button" bindtap="onRightButton1Tap"><p>发车啦 ></p><p class="text1">快加入车队吧！</p></button>
+        <button class="right-button1" bindtap="onRightButton2Tap"><p>热度榜 ></p>
+        <p class="text1">剧本好评榜单新鲜出炉啦！</p>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="announcement">
+  <image src="/pages/images/gonggao.png" class="announcement-image" ></image>
+    <text class="announcement-text">{{currentAnnouncement}}</text>
+  </view>
+  <view class="rooms">
+  <text class="text2" >*主题房间</text>
+    <scroll-view scroll-x="true" class="scroll-x-list">
+        <view wx:for="{{rooms}}" wx:key="index" class="view-parent">
+            <image src="{{item.image}}" class="room-image" mode="aspectFill"></image>
+            <text class="room-name">{{item.name}}</text>
+        </view>
+    </scroll-view>
+    <view class="ss">
+    <text class="text2">*店内DM</text>
+    <scroll-view scroll-x="true" class="scroll-x-list1">
+        <view wx:for="{{dms}}" wx:key="index" class="view-parent">
+            <image src="{{item.image}}" class="dm-image" mode="aspectFill"></image>
+            <text class="dm-name">{{item.name}}</text>
+        </view>
+    </scroll-view>
+  </view>
+</view>
+</view>

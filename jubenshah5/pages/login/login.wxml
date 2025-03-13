@@ -1,0 +1,16 @@
+<!--pages/login/login.wxml-->
+<view class="container" style="background-image: url('https://wx1.sinaimg.cn/orj360/e60238a1ly1hvjh0hz58vj21831qdx6r.jpg');background-size: cover;float: bottom;">
+<view class="box">
+  <view class="avatar-container">
+    <image src="https://wx3.sinaimg.cn/mw690/e60238a1ly1hvjg2xr88ij20it0gadga.jpg" class="avatar" mode="aspectFill"></image>
+  </view>
+  <view class="form-container">
+    <input class="input" type="text" placeholder="账号" bindinput="onInputUsername" />
+    <input class="input" type="password" placeholder="密码" bindinput="onInputPassword" />
+    
+    <button class="login-button" bindtap="onLogin">登录</button>
+    
+    <text class="register-text" bindtap="goToRegister">没账号去注册?</text>
+  </view>
+</view>
+</view>

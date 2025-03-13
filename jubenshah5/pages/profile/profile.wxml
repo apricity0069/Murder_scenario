@@ -1,0 +1,53 @@
+<!--pages/profile/profile.wxml-->
+<view class="container" style="height: 100%;">
+<scroll-view scroll-y="true">
+  <view class="top-section">
+    <view class="user-info">
+      <image class="avatar" src="https://wx3.sinaimg.cn/mw690/e60238a1ly1hvjg2xr88ij20it0gadga.jpg" mode="aspectFill"></image>
+      <view class="info">
+        <text class="name">{{userName}}</text>
+        <text class="id">玩家ID: {{userId}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="container2" >
+
+  <view class="horizontal-buttons">
+  <navigator url="/pages/collect/collect" class="button-item">
+    <image class="icon" src="https://wx3.sinaimg.cn/mw690/e60238a1ly1hvjg4dokqtj205k05kweh.jpg" mode="aspectFit"></image>
+    <text class="text1">我的收藏</text>
+  </navigator>
+  <navigator url="/pages/fcl/fcl" class="button-item">
+    <image class="icon" src="https://wx1.sinaimg.cn/mw690/e60238a1ly1hvjg49me5zj205k05kjra.jpg" mode="aspectFit"></image>
+    <text class="text1">预定/车队</text>
+  </navigator>
+  <navigator url="/pages/history/history" class="button-item">
+    <image class="icon" src="https://wx1.sinaimg.cn/mw690/e60238a1ly1hvjg4budf8j205k05ka9z.jpg" mode="aspectFit"></image>
+    <text class="text1">历史订单</text>
+  </navigator>
+</view>
+<view class="ads">
+    <image class="ad" src="https://wx1.sinaimg.cn/mw690/e60238a1gy1hvzmpz1kpxj21ha0inq85.jpg" mode="aspectFit"></image>
+    <text class="adtext">广告</text>
+  </view>
+  <view class="vertical-buttons">
+    <navigator url="/pages/invite-gift/invite-gift" class="button-item2">
+      <image class="icon2" src="https://wx4.sinaimg.cn/mw690/e60238a1ly1hvjg4d4u8wj205k05ka9x.jpg" mode="aspectFit"></image>
+      <text class="text2" bindtap="yqyl">邀请有礼</text>
+    </navigator>
+    <navigator url="/pages/customer-service/customer-service" class="button-item2" bindtap="callShop">
+      <image class="icon2" src="https://wx3.sinaimg.cn/mw690/e60238a1ly1hvjg4cx03qj205k05kgll.jpg" mode="aspectFit"></image>
+      <text class="text2" >客服中心</text>
+    </navigator>
+    <navigator url="/pages/about-us/about-us" class="button-item2" style="height: 105rpx; display: flex; box-sizing: border-box;">
+      <image class="icon2" src="https://wx1.sinaimg.cn/mw690/e60238a1ly1hvjg49ezcmj205k05k749.jpg" mode="aspectFit"></image>
+      <text class="text2">关于我们</text>
+    </navigator>
+  </view>
+  <view class="out">
+  <button bindtap="gologin">退出登录</button>
+  </view>
+</view>
+</scroll-view>
+</view>
+

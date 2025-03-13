@@ -1,0 +1,98 @@
+/* 页面样式 */
+page{
+  overflow-y: auto !important;
+  background-color:#656262;
+}
+
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* 头部样式 */
+.back-button {
+  position:absolute;
+  left: 20rpx; /* 根据需要调整 */
+  top: 120rpx; /* 根据需要调整 */
+  width: 40rpx; /* 设置返回按钮的宽度 */
+  height: 40rpx; /* 设置返回按钮的高度 */
+  margin-right: 10px; /* 图片与文本之间的间距 */
+}
+.txt{
+  margin-top: 40px;
+  margin-left: 148px;
+  font-size: 22px;
+  font-weight:normal;
+  color: white;
+}
+
+
+/* 历史记录列表项样式 */
+.history-list{
+  height: 100%;
+  width: 100%;
+margin-left: 2%;
+  display: block;
+}
+.num-item {
+  margin-top: 3%;
+  width: 90%;
+  height: 20%;
+  float: left;
+  display: flex;
+  padding: 3%;
+  border-radius: 10rpx;
+  color: #0c0c0c;
+  box-shadow: 0 2rpx 4rpx rgba(8, 8, 8, 0.89);
+  background-color: #ffffff;
+}
+
+/* 左侧内容样式 */
+.num-item text {
+  display: block; /* 每个text元素独占一行 */
+  margin-bottom: 8px; /* 根据需要调整间距 */
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.left-content {
+  width: 80%;
+  height: 100%;
+}
+
+.left-content image {
+  box-sizing: border-box;
+  margin-right: 8px;
+  width: 33%;
+  height: 100%;
+  float: left;
+}
+
+.biao {
+  width: 20%;
+  height: 50%;
+}
+
+.biao image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* 到底提示样式 */
+.ex {
+  position: absolute; /* 使用绝对定位 */
+  bottom: 0; /* 定位到底部 */
+  left: 50%; /* 水平居中 */
+  transform: translateX(-50%); /* 使用位移来精确居中 */
+  text-align: center; /* 确保文本水平居中 */
+  margin-bottom: 30px; /* 如果需要，可以保留这个外边距 */
+  color: #cec3c3; /* 字体颜色 */
+}

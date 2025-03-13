@@ -1,0 +1,42 @@
+<!--pages/detail/detail.wxml-->
+<view class="container">
+  <image class="back-button" src="/pages/images/fh.png" bindtap="goBack"></image>
+  <view class="txt">案件现场</view>
+  <view class="top" wx:key="unique">
+    <image src="{{jb_wz}}" class="img" />
+    <view class="text">
+      <text class="title">{{jb_name}}</text>
+      <view class="money-button-container">
+            <text class="tags">{{jb_tag}}</text>
+            <image class="sc" src="{{is_sc === 0 ? '/pages/images/wsc.png' : '/pages/images/ysc.png'}}" bindtap="sc"></image>
+          </view>
+            <text class="time">{{jb_num}}人 | {{jb_nd}}</text>
+            <view class="money-button-container">
+            <text class="money">{{jb_price}}￥</text>
+            <view class="booking-button" bindtap="yd">预订</view>
+          </view>
+    </view>
+  </view>
+  <view class="story-summary" bindtap="toggleSummary">
+    <view class="jqjj">剧情简介：</view>
+    <view class="summary-content">{{jb_jj}}</view>
+  </view>
+  <view class="zuozhe">
+  <view class="text1">剧本创作团队</view>
+  <scroll-view scroll-x="true" class="scroll-x-list">
+        <view wx:for="{{dms}}" wx:key="index" class="view-parent">
+            <image src="{{item.image}}" class="dm-image" mode="aspectFill"></image>
+            <text class="dm-name">{{item.name}}</text>
+        </view>
+    </scroll-view>
+  </view>
+  <view class="rooms">
+  <text class="text2">猜你喜欢</text>
+    <scroll-view scroll-x="true" class="scroll-x-list">
+        <view wx:for="{{rooms}}" wx:key="index" class="view-parent">
+            <image src="{{item.image}}" class="room-image" mode="aspectFill"></image>
+            <text class="room-name">{{item.name}}</text>
+        </view>
+    </scroll-view>
+</view>
+</view>

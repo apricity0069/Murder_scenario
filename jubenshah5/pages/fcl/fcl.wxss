@@ -1,0 +1,122 @@
+/* pages/fcl/fcl.wxss */
+page{
+  overflow-y: auto !important;
+  background-color:#656262;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+.back-button {
+    position:absolute;
+    left: 20rpx; /* 根据需要调整 */
+    top: 120rpx; /* 根据需要调整 */
+    width: 40rpx; /* 设置返回按钮的宽度 */
+    height: 40rpx; /* 设置返回按钮的高度 */
+    margin-right: 10px; /* 图片与文本之间的间距 */
+}
+.txt{
+  margin-top: 40px;
+  margin-left: 148px;
+  font-size: 22px;
+  font-weight:normal;
+  color: white;
+}
+
+.ranking-list {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  right:11px;
+}
+.top-border {
+  height: 0.5px; /* 横线的高度 */
+  background-color: #ccc; 
+  width: 105%; /* 横线的宽度，这里设置为100%，即占满整个容器的宽度 */
+}
+.script {
+  position: relative; /* 添加相对定位 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #ccc; */
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 10px ;
+  width: 99%;
+  padding-top: 15px;
+  padding-bottom: 12px;
+  max-width: 100vh; /* 确保不超出容器 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+  background-color:#494949;
+}
+.script-container {
+  position: relative; /* 添加相对定位 */
+}
+.script-image {
+  width: 90px; /* 设置图片宽度 */
+  height: 130px; /* 设置图片高度 */
+  margin-right: 10px; /* 设置图片与文本之间的间距 */
+  border-radius: 0px; /* 可选，圆角效果 */
+}
+
+.text text {
+  display: block; /* 每个text元素独占一行 */
+  margin-bottom: 8px; /* 根据需要调整间距 */
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tags {
+  font-size: 14px;
+  color: white;
+  margin-top: 3px;
+}
+
+.time{
+  padding-top: 10px;
+  font-size: 14px;
+  margin-left: 5px;
+  color: white;
+  height: 25px;
+}
+.money-button-container {
+  display: flex; /* 使用 Flexbox 来对齐金额和按钮 */
+  align-items: center; /* 垂直居中对齐 */
+}
+.zdz{
+  display: flex;
+  background-color: #faba42; /* 橙色背景 */
+  color: rgb(0, 0, 0); /* 白色文字 */
+  padding: 1px 5px 3px 10px;
+  height: 22px;
+  width: 62px;
+  margin-left: 40px;
+  text-decoration: none; /* 无下划线 */
+  font-size: 18px; /* 字体大小 */
+  border-radius: 12px; /* 圆角边框 */
+}
+.ns{
+  font-size: 20px;
+  margin-right: 2px;
+  padding-left: 20px;
+}
+.booking-button {
+  background-color: #faba42; /* 橙色背景 */
+  color: rgb(0, 0, 0); /* 白色文字 */
+  padding-top: 2px;
+  padding-left: 15px;
+  width: 50px;
+  margin-left: 40px;
+  text-decoration: none; /* 无下划线 */
+  font-size: 16px; /* 字体大小 */
+  height: 25px; /* 高度 */
+  cursor: pointer; /* 鼠标悬停时显示指针 */
+  border-radius: 5px; /* 圆角边框 */
+}

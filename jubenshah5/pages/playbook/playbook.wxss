@@ -1,0 +1,167 @@
+/* pages/playbook/playbook.wxss */
+page{
+  overflow-y: auto !important;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color:#504e4f;
+}
+  .back-button {
+    position: absolute;
+    left: 20rpx; /* 根据需要调整 */
+    top: 120rpx; /* 根据需要调整 */
+    width: 40rpx; /* 设置返回按钮的宽度 */
+    height: 40rpx; /* 设置返回按钮的高度 */
+  }
+  .txt{
+    margin-top: 40px;
+    margin-left: 148px;
+    font-size: 22px;
+    font-weight:normal;
+    color: white;
+  }
+.search-box {
+  position: relative; /* 设置相对定位，以便绝对定位图像 */
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.search-box input {
+  flex-grow: 1; /* 输入框占据剩余空间 */
+  border: 1px solid white; /* 设置边框颜色和宽度 */
+  box-sizing: border-box; /* 确保内边距不影响宽度 */
+  padding-right: 0px; /* 为图像留出空间 */
+  border-radius: 20px;
+  width: 90%;
+  height: 35px;
+  box-sizing: border-box; /* 确保内边距不影响宽度 */
+  padding: 8px; /* 设置内边距 */
+  margin-bottom: 10px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  margin-top: 20px;
+  margin-left: 10px; /* 与输入框的间距 */
+  transform: translateY(-50%);
+  width: 30px; /* 根据需要调整尺寸 */
+  height: 30px; /* 根据需要调整尺寸 */
+  z-index: 2;
+}
+.filter-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.filter-label {
+  margin-right: 1px;
+  font-weight: bold;
+  margin: 5 3px; /* 左右间距 5px */
+  
+}
+
+.filter-tags {
+  display: flex;
+}
+
+.filter-tag {
+  margin: 7px; /* 左右间距 10px */
+  cursor: pointer;
+  padding: 0px;
+  
+}
+
+/* 为选中的标签添加样式 */
+.selected {
+  color: rgb(236, 156, 5);
+  border-color: red;
+}
+
+.ranking-list {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  right:11px;
+}
+.top-border {
+  height: 0.5px; /* 横线的高度 */
+  background-color: #ccc; 
+  width: 105%; /* 横线的宽度，这里设置为100%，即占满整个容器的宽度 */
+}
+.script {
+  position: relative; /* 添加相对定位 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #ccc; */
+  padding: 10px ;
+  max-width: 100vh; /* 确保不超出容器 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+}
+.script-container {
+  position: relative; /* 添加相对定位 */
+}
+.script-image {
+  width: 90px; /* 设置图片宽度 */
+  height: 130px; /* 设置图片高度 */
+  margin-right: 10px; /* 设置图片与文本之间的间距 */
+  border-radius: 0px; /* 可选，圆角效果 */
+}
+
+.text text {
+  display: block; /* 每个text元素独占一行 */
+  margin-bottom: 5px; /* 根据需要调整间距 */
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tags {
+  font-size: 12px;
+  color: white;
+}
+
+.time{
+  padding-top: 5px;
+  font-size: 14px;
+  color: white;
+}
+
+.details{
+  font-size: 13px;
+  font-weight: lighter;
+  color: white;
+  width: 270px;
+  padding-top: 3px;
+  height: 35px;
+  overflow: hidden;
+}
+
+.booking-button {
+  background-color: #faba42; /* 橙色背景 */
+  color: white; /* 白色文字 */
+  padding-top: 2px;
+  padding-left: 15px;
+  width: 50px;
+  margin-left: 210px;
+  text-decoration: none; /* 无下划线 */
+  font-size: 16px; /* 字体大小 */
+  height: 25px; /* 高度 */
+  cursor: pointer; /* 鼠标悬停时显示指针 */
+  border-radius: 5px; /* 圆角边框 */
+  z-index: 2;
+}
+
+.booking-button:hover {
+  background-color: #ff8c00; /* 鼠标悬停时的背景色 */
+}

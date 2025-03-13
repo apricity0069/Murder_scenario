@@ -1,0 +1,189 @@
+/* pages/detail/detail.wxss */
+page{
+  overflow-y: auto !important;
+  background-color:#504e4f;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color:#504e4f;
+}
+.back-button {
+    position:absolute;
+    left: 20rpx; /* 根据需要调整 */
+    top: 120rpx; /* 根据需要调整 */
+    width: 40rpx; /* 设置返回按钮的宽度 */
+    height: 40rpx; /* 设置返回按钮的高度 */
+    margin-right: 10px; /* 图片与文本之间的间距 */
+}
+.txt{
+    margin-top: 40px;
+    margin-left: 148px;
+    font-size: 22px;
+    font-weight:normal;
+    color: white;
+}
+.img{
+    margin-top:20px;
+    border-radius:2px;
+    width: 120px;
+    height: 170px;
+    margin-left: 0px;
+}
+.top {
+    display: flex; /* 使用 flexbox 布局 */
+    width: 100vh;
+}.text {
+  display: flex; /* 如果希望整个区域使用 flexbox，可以保持这个 */
+  flex-direction: column; /* 让子元素垂直排列 */
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-left: 20px;
+  color: white;
+}
+
+.text text {
+  margin-bottom: 15px; /* 添加底部间距，以增加行间距 */
+}
+
+.title{
+  font-size: 24px;
+  font-weight:normal;
+  color: white;
+}
+.tags {
+  font-size: 20px;
+  color: white;
+}
+
+
+.time{
+  padding-top: 5px;
+  font-size: 18px;
+  font-weight: initial;
+  color: white;
+}
+.money{
+  margin-top: 5px;
+  font-size: 26px;
+  color: orange;
+  margin-right: 10px; /* 添加右间距以分隔文字和按钮 */
+}
+.story-summary {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 20px;
+  padding: 10px;
+  position: relative;
+  width: 370px;
+  color: #ccc;
+}
+
+.summary-content {
+  line-height: 1.6;
+  white-space: pre-wrap; /* 添加这个属性来支持自动换行 */
+  color: #ccc;
+}
+
+.toggle-text {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #ccc;
+}
+.jqjj{
+  font-size: 18px;
+  font-weight: bold;
+}
+.money-button-container {
+  display: flex; /* 使用 Flexbox 来对齐金额和按钮 */
+  align-items: center; /* 垂直居中对齐 */
+}
+.sc{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-left: 140px;
+}
+.booking-button {
+  display: flex;
+  background-color: #faba42; /* 橙色背景 */
+  color: white; /* 白色文字 */
+  padding: 10px 20px 12px 20px;
+  margin-left: 80px;
+  text-decoration: none; /* 无下划线 */
+  font-size: 20px; /* 字体大小 */
+  cursor: pointer; /* 鼠标悬停时显示指针 */
+  border-radius: 5px; /* 圆角边框 */
+}
+
+.booking-button:hover {
+  background-color: #ff8c00; /* 鼠标悬停时的背景色 */
+}
+.zuozhe{
+  width: 100%;
+  margin-top: 0px;
+}
+.rooms{
+  width: 100%;
+  margin-top: -12px;
+}
+.text1{
+  margin-top:20px;
+  margin-left: 3px;
+  font-size: 20px;
+  color: white;
+}
+.text2{
+  margin-left: 3px;
+  font-size: 20px;
+    color: white;
+}
+.scroll-x-list {
+  height: 180px; /* 列表的高度 */
+  margin-bottom: 20px; /* 列表之间的间距 */
+  width: 100%;  /* 或其他适当的宽度 */
+  white-space: nowrap;
+  margin-left: -6px;
+  display: flex; /* 使子元素可以在一行中排列 */
+}
+.view-parent {
+  display: inline-block; /* 水平排列 */
+  text-align: center; /* 内容居中 */
+}
+.dm-image{
+  width: 90px; /* 图像宽度 */
+  height: 130px; /* 图像高度 */
+  margin: 10px; /* 图像之间的间距 */
+  border-radius: 5px; /* 图像边角圆润 */
+}
+.room-image{
+  width: 90px; /* 图像宽度 */
+  height: 130px; /* 图像高度 */
+  margin: 10px; /* 图像之间的间距 */
+  border-radius: 5px; /* 图像边角圆润 */
+}
+
+.room-name,.dm-name{
+  display: block; /* 使名称占据一行 */
+  margin-top: 0px; /* 名称与图像之间的间距 */
+  font-size: 14px; /* 字体大小 */
+  color: #ccc;
+}
+.bottom-fixed {
+  position: fixed; /* 固定定位 */
+  left: 0; /* 左边距离窗口边缘的距离 */
+  right: 0; /* 右边距离窗口边缘的距离 */
+  bottom: 0; /* 底部距离窗口边缘的距离 */
+  display: flex; /* 使用Flex布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  height: 50px; /* 固定区域的高度 */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* 底部阴影 */
+  background-color: rgb(255, 255, 255); /* 背景颜色 */
+}

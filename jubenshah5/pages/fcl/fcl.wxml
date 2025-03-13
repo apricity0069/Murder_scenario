@@ -1,0 +1,26 @@
+<!--pages/fcl/fcl.wxml-->
+<view class="container">
+  <image class="back-button" src="/pages/images/fh.png" bindtap="goback"></image>
+  <view class="txt">预约/组队</view>
+  <view class="ranking-list">
+        <view class="script" wx:for="{{scriptList}}" wx:key="unique" wx:for-index="index">
+          <view class="script-container">
+          <image class="script-image" src="{{item.jb_wz}}" />
+        </view>
+          <view class="text">
+            <view class="money-button-container">
+            <text class="title">{{item.jb_name}}</text>
+            <view class="zdz">组队中</view>
+            <text class="ns">{{item.yy_num}}/{{item.jb_num}}</text>
+            </view>
+            <text class="tags">{{item.jb_tag}}</text>
+            <text class="details"></text>
+            <text class="time">{{item.jb_num}} | {{item.jb_nd}}</text>
+            <view class="money-button-container">
+            <text>门店位置：杭电路666号</text>
+            <view class="booking-button" bindtap="jiaqu" data-jb-yy-id="{{item.jb_yy_id}}" data-isjoq="{{isshowjr[index]}}" data-jb-id="{{item.jb_id}}"> {{isshowjr[index] === 0 ? '加入' : '取消'}}</view>
+          </view>
+          </view>
+        </view>
+      </view>
+</view>

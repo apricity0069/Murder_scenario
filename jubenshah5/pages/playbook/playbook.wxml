@@ -1,0 +1,65 @@
+<view class="container">
+  <image class="back-button" src="/pages/images/fh.png" bindtap="goBack"></image>
+  <view class="txt">案发卷宗</view>
+  <view class="search-box">
+    <input type="text" placeholder="请输入剧本名称" bindinput="onSearchInput" style="background-color: white;" />
+    <image src="/pages/images/ss.png" class="search-icon" bindtap="onSearchIconTap"/>
+  </view>
+  <view class="filter-group">
+    <text class="filter-label">人数：</text>
+    <view class="filter-tags">
+      <block wx:for="{{num}}" wx:key="unique" wx:for-item="item" wx:for-index="index" >
+        <view class="filter-tag {{item.selected ? 'selected' : ''}}" data-index="{{index}}" bindtap="toggleFilter" data-group="num">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="filter-group">
+    <text class="filter-label">难度：</text>
+    <view class="filter-tags">
+      <block wx:for="{{nd}}" wx:key="unique" wx:for-item="item" wx:for-index="index">
+        <view class="filter-tag {{item.selected ? 'selected' : ''}}" data-index="{{index}}" bindtap="toggleFilter" data-group="nd">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="filter-group">
+    <text class="filter-label">标签：</text>
+    <view class="filter-tags">
+      <block wx:for="{{tag}}" wx:key="unique" wx:for-item="item" wx:for-index="index">
+        <view class="filter-tag {{item.selected ? 'selected' : ''}}" data-index="{{index}}" bindtap="toggleFilter" data-group="tag">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="filter-group">
+    <text class="filter-label">价格：</text>
+    <view class="filter-tags">
+      <block wx:for="{{price}}" wx:key="unique" wx:for-item="item" wx:for-index="index">
+        <view class="filter-tag {{item.selected ? 'selected' : ''}}" data-index="{{index}}" bindtap="toggleFilter" data-group="price">
+          {{item.label}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="ranking-list">
+    <view class="top-border"></view>
+        <view class="script" wx:for="{{scriptList}}" wx:key="unique" bindtap="detailshow" data-item="{{item}}">
+          <view class="script-container">
+          <image class="script-image" src="{{item.jb_wz}}" />
+        </view>
+          <view class="text">
+            <text class="title">{{item.jb_name}}</text>
+            <text class="tags">{{item.jb_tag}}</text>
+            <text class="details">{{item.jb_jj}}</text>
+            <text class="time">{{item.jb_num}}人 | {{item.jb_nd}}</text>
+          </view>
+        </view>
+      </view>
+</view>

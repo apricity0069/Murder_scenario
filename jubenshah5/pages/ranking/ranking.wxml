@@ -1,0 +1,25 @@
+<!-- pages/ranking/ranking.wxml -->
+<view class="container">
+  <image class="back-button" src="/pages/images/fh.png" bindtap="goBack"></image>
+  <view class="background-image" style="background-image: url('https://wx4.sinaimg.cn/mw690/e60238a1ly1hvjg4bjkvij21gl17rb29.jpg');"></view>
+  <view class="txt">剧本热度榜</view>
+  <view class="txt1">热度飙升榜</view>
+  <scroll-view scroll-y="true" style="height: 100%; width: 100%;">
+    <view class="whitebox">
+      <view class="ranking-list">
+        <view class="script" wx:for="{{scriptList}}" wx:key="unique">
+          <view class="script-container">
+          <image class="script-image" src="{{item.image}}" />
+          <text class="score">{{item.score}}</text>
+        </view>
+          <view class="text">
+            <text class="title">{{item.title}}</text>
+            <text class="tags">{{item.tags}}</text>
+            <text class="details">{{item.details}}</text>
+            <text class="time">{{item.time}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

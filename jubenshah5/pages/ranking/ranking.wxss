@@ -1,0 +1,116 @@
+page{height: 100%;width:100%}
+  
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  height: 100vh; 
+}
+.back-button {
+  position: absolute;
+  left: 20rpx; /* 根据需要调整 */
+  top: 120rpx; /* 根据需要调整 */
+  width: 40rpx; /* 设置返回按钮的宽度 */
+  height: 40rpx; /* 设置返回按钮的高度 */
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1; 
+}
+.txt{
+  padding-top: 30px;
+  font-size: 24px;
+  font-weight:bold;
+  color: white;
+}
+.txt1{
+  padding-top:30px;
+  padding-bottom: 40px;
+  font-size: 45px;
+  font-weight: bold;
+  color:#fed988;
+}
+.whitebox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 从底部开始排列内容 */
+  align-items: flex-start; /* 确保内容在容器的顶部 */
+  background-color: rgb(228, 226, 226); /* 背景色为白色 */
+  border-top-left-radius: 20rpx; /* 上左圆角 */
+  border-top-right-radius: 20rpx; /* 上右圆角 */
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.1); /* 可选，添加阴影效果 */
+  z-index: 1;
+  overflow-y: auto; /* 确保内部内容可以滚动 */
+  padding-bottom: 90px;
+}
+
+.ranking-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.script {
+  position: relative; /* 添加相对定位 */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px ;
+  max-width: 100%; /* 确保不超出容器 */
+  overflow: hidden; /* 隐藏溢出的内容 */
+}
+.script-container {
+  position: relative; /* 添加相对定位 */
+}
+.script-image {
+  width: 100px; /* 设置图片宽度 */
+  height: 150px; /* 设置图片高度 */
+  margin-right: 10px; /* 设置图片与文本之间的间距 */
+  border-radius: 10px; /* 可选，圆角效果 */
+}
+.score {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  right: 8px;
+  padding: 2px 5px;
+  color: rgb(247, 129, 34);
+  background-color: rgba(255, 255, 255, 0.959); /* 添加半透明白色背景 */
+  font-size: 14px;
+  border-radius: 0 10px 0 10px; /* 设置圆角 */
+}
+.text text {
+  display: block; /* 每个text元素独占一行 */
+  margin-bottom: 5px; /* 根据需要调整间距 */
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tags {
+  font-size: 14px;
+  color: #555;
+}
+
+.time{
+  padding-top: 5px;
+  font-size: 14px;
+  color: #555;
+  
+}
+
+
+.details{
+  font-size: 14px;
+  color: #555;
+  width: 290px;
+  padding-top: 3px;
+}

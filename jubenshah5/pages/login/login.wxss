@@ -1,0 +1,62 @@
+/* pages/login/login.wxss */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 使容器充满整个视口 */
+}
+
+.box {
+  border: rgb(175, 175, 169) 5px solid;
+  background-color: rgba(201, 197, 197, 0.8); /* 半透明白色背景 */
+  border-radius: 10px; /* 圆角效果 */
+  padding: 20px; /* 内边距 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+  width: 80%; /* 可以根据需要调整宽度 */
+  max-width: 400px; /* 最大宽度 */
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; /* 头像与表单之间的间距 */
+}
+
+.avatar {
+  width: 80px; /* 头像的宽度 */
+  height: 80px; /* 头像的高度 */
+  border-radius: 50%; /* 使头像为圆形 */
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* 纵向排列表单元素 */
+}
+
+.input {
+  margin-bottom: 15px; /* 输入框之间的间距 */
+  padding: 10px; /* 输入框内边距 */
+  border: 1px solid rgb(54, 54, 54); /* 输入框边框 */
+  border-radius: 5px; /* 输入框圆角 */
+}
+
+.login-button {
+  background-color: #606163; /* 登录按钮的背景颜色 */
+  color: #fff; /* 登录按钮文字颜色 */
+  padding: 10px; /* 按钮内边距 */
+  border: none; /* 去掉按钮边框 */
+  border-radius: 5px; /* 按钮圆角 */
+  cursor: pointer; /* 鼠标指针样式 */
+}
+
+.login-button:hover {
+  background-color: #8d8e91; /* 悬停时按钮颜色 */
+}
+
+.register-text {
+  text-align: center; /* 文本居中 */
+  color: #464343; /* 注册链接颜色 */
+  cursor: pointer; /* 鼠标指针样式 */
+  margin-top: 10px; /* 注册文本上方间距 */
+}
+

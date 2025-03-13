@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/one.css" th:href="@{/css/one.css}">
+    <title>剧本杀后台管理</title>
+</head>
+<body>
+<div id="sidebar">
+    <h2>剧本杀后台管理</h2>
+    <ul>
+        <li  style="background-color: #212121;" ><a th:href="@{get_all_jb}" style="color: white; font-size: 20px;text-decoration: none;">剧本管理</a></li>
+        <li>
+            <a th:href="@{get_all_user}" style="color: white; text-decoration: none; font-size: 20px; ">用户管理</a>
+        </li>
+        <li><a th:href="@{get_all_dd}" style="color: white; text-decoration: none; font-size: 20px;">订单管理</a></li>
+        <li><a th:href="@{tiaozhuan}" style="color: white; text-decoration: none; font-size: 20px;">数据统计</a></li>
+    </ul>
+</div>
+
+<div id="main">
+    <div id="header">
+        <h1>探索剧本杀的无限可能，欢迎登陆后台管理系统 !</h1>
+        <img src="role-1.jpeg" alt="用户头像">
+    </div>
+    <div id="bottom">
+
+        <div class="button-container">
+            <div class="cyj">剧本库管理</div>
+            <div class="zyq">
+                <div class="search-container">
+                    <form th:action="@{get_xz_jb}" method="get">
+                        <input type="text" id="searchBox" placeholder="请输入搜索内容" th:name="jbName" th:value="${jbName}" style="width: 280px;height:45px;margin-right: 10px;border-radius: 10px;" />
+                        <button type="submit" style="text-align: right;margin-left: auto;padding: 10px 17px;background-color: skyblue; color: black;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 16px;">查询</button>
+                    </form></div>
+                <a  th:href="@{get_all_jb}" style="text-align: right;margin-left: auto;padding: 8px 15px;background-color:#94b289; color: white;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 14px;border-radius: 6px;">更新</a>
+            </div>
+
+
+        </div>
+
+        <table class="rounded-shadow-table">
+            <thead>
+            <tr>
+                <th style="width: 160px;">剧本名称</th>
+                <th style="width: 80px;">剧本分类</th>
+                <th style="width: 80px;">剧本人数</th>
+                <th>剧本简介</th>
+                <th style="width: 80px;">剧本价格</th>
+                <th style="width: 80px;">剧本难度</th>
+                <th >剧本封面</th>
+                <th style="width: 150px;">操作</th> <!-- 操作列 -->
+            </tr>
+
+            <tr th:each="juben : ${juben}">
+                <td th:text="${juben.jb_name}"></td>
+                <td th:text="${juben.jb_tag}"></td>
+                <td th:text="${juben.jb_num}"></td>
+                <td  class="ellipsis" style="width: 280px;" th:text="${juben.jb_jj}"></td>
+                <td th:text="${juben.jb_price}"></td>
+                <td th:text="${juben.jb_nd}"></td>
+                <td class="ellipsis" style="width: 280px;" th:text="${juben.jb_wz}"></td>
+                <td>
+                    <div>
+                        <div style="display: flex; justify-content: flex-end;">
+                            <a onclick="showModal();" th:href="@{get_a_info(jb_id=${juben.jb_id})}" style="border-radius: 6px;text-align: right;margin-right:15px;padding: 8px 15px;background-color: #63b3ef; color: white;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 14px;">修改</a >
+                            <a  th:href="@{delete_jb_info(jb_id=${juben.jb_id})}" onclick="return deleteInfo()" style="border-radius: 6px;text-align: right;margin-right:10px;padding: 8px 15px;background-color:orangered; color: white;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 14px;">下架</a >
+                        </div>
+                        <script>
+                            function deleteInfo() {
+                                const r = confirm("确定删除此信息？");
+                                if (r) {
+                                    alert("删除成功");
+                                    return true;
+                                }
+                                return false;
+                            }
+                        </script>
+                    </div>
+
+            </thead>
+            <tbody>
+            <!-- 剧本行将在这里动态添加 -->
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+    <div id="content">
+        <div id="add-script">
+            <form id="scriptForm" action="insert_jbinfo" method="get">
+                <div class="zmz">添加剧本</div>
+                剧本名称:<input type="text" maxlength="20" th:name="jb_name" th:value="${jb_name}" />
+                剧本分类:<input type="text" maxlength="20" th:name="jb_tag" th:value="${jb_tag}" />
+                剧本开团人数:<input type="text" maxlength="20" th:name="jb_num" th:value="${jb_num}"/>
+                剧本简介:<input type="text" maxlength="20" th:name="jb_jj" th:value="${jb_jj}"/>
+                剧本价格:<input type="text" maxlength="20" th:name="jb_price" th:value="${jb_price}"/>
+                剧本难度:<input type="text" maxlength="20" th:name="jb_nd" th:value="${jb_nd}"/>
+                剧本封面:<input type="text" maxlength="20" th:name="jb_wz" th:value="${jb_wz}"/>
+                <button type="submit" th:href="@{insert_jbinfo(jb_name=${jb_name},jb_tag=${jb_tag},jb_num=${jb_num},jb_jj=${jb_jj},jb_price=${jb_price},jb_nd=${jb_nd},jb_wz=${jb_wz})}" style="border-radius: 6px;;text-align: right;padding: 13px 23px;background-color:#51a951;margin-top: 12px; color: white; cursor: pointer;font-size: 14px;">添加剧本</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+<script>
+    function changeStatus(button) {
+        // 第一次确认
+        const confirmFirst = confirm("您确定要下架这个剧本吗？");
+        if (confirmFirst) {
+            // 第二次确认
+            const confirmSecond = confirm("这将是最后确认，您确认下架吗？");
+            if (confirmSecond) {
+                // 执行下架操作，比如隐藏行或删除行
+                const row = button.closest('tr');
+                row.style.display = 'none'; // 隐藏该行
+                alert("剧本已下架成功。");
+            }
+        }
+    }
+
+    function addScript() {
+        const name = document.getElementById('scriptName').value;
+        const category = document.getElementById('scriptCategory').value;
+        const players = document.getElementById('scriptPlayers').value;
+        const description = document.getElementById('scriptDescription').value;
+        const price = document.getElementById('scriptPrice').value;
+        const difficulty = document.getElementById('scriptDifficulty').value;
+        const img = document.getElementById('scriptImg').value;
+
+        if (name && category && players && description && price && difficulty&&img) {
+            const tableBody = document.querySelector('tbody');
+            const newRow = document.createElement('tr');
+
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${category}</td>
+                <td>${players}</td>
+                <td>${description}</td>
+                <td>${price}元</td>
+                <td>${difficulty}</td>
+                <td>${img}</td>
+                <td class="action-buttons">
+                    <button class="off-shelf" onclick="changeStatus(this)">下架</button>
+                </td>
+            `;
+
+            tableBody.appendChild(newRow);
+
+            // 清空输入框
+            document.getElementById('scriptName').value = '';
+            document.getElementById('scriptCategory').value = '';
+            document.getElementById('scriptPlayers').value = '';
+            document.getElementById('scriptDescription').value = '';
+            document.getElementById('scriptPrice').value = '';
+            document.getElementById('scriptDifficulty').value = '';
+            document.getElementById('scriptImg').value = '';
+        } else {
+            alert("请填写所有字段！");
+        }
+    }
+</script>
+
+</body>
+</html>

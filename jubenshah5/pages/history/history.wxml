@@ -1,0 +1,21 @@
+<view class="container" >
+    <image class="back-button" src="/pages/images/fh.png" bindtap="goback"></image>
+  <view class="txt">历史订单</view>
+  <view class="history-list">
+  <view class="num-item" wx:for="{{jbs_history}}" wx:key="index" >
+    <view class="content">
+      <view class="left-content" >
+        <image src="{{item.jb_wz}}" mode="aspectFill"></image>
+        <text>{{item.jb_name}}</text>
+        <text>{{item.jb_tag}}</text>
+        <text>{{item.jb_num}}人</text>
+        <text>门店位置:杭电路666号</text>
+      </view>
+      <view class="biao">
+        <image src="/pages/images/logal.png" mode="aspectFill" ></image>
+      </view>
+    </view>
+  </view>
+</view>
+  <view class="ex">没有更多了，快去玩本吧~</view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/collect/collect.wxml-->
+<view class="container" >
+    <image class="back-button" src="/pages/images/fh.png" bindtap="goback"></image>
+  <view class="txt">我的收藏</view>
+  <view class="history-list">
+  <view class="num-item" wx:for="{{jb_cs}}" wx:key="index" >
+    <view class="content">
+      <view class="left-content" >
+        <image src="{{item.jb_wz}}" mode="aspectFill"></image>
+        <text>{{item.jb_name}}</text>
+        <text>{{item.jb_tag}}</text>
+        <text>{{item.jb_num}}人</text>
+        <text>门店位置:杭电路666号</text>
+      </view>
+      <view class="biao">
+        <image src="/pages/images/logal.png" mode="aspectFill" ></image>
+      </view>
+    </view>
+  </view>
+</view>
+  <view class="ex">遇到喜欢的本就收藏以下吧~</view>
+</view>

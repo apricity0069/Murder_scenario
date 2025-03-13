@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>剧本杀后台管理</title>
+    <link rel="stylesheet" href="../static/css/one.css" th:href="@{/css/one.css}">
+</head>
+<body>
+<div id="sidebar">
+    <h2>剧本杀后台管理</h2>
+    <ul>
+        <li><a href="juben.html" th:href="@{get_all_jb}" style="color: white; font-size: 20px;text-decoration: none;">剧本管理</a></li>
+        <li style="background-color: #212121;"  >
+            <a href="user.html"  th:href="@{get_all_user}" style="color: white; text-decoration: none; font-size: 20px;">用户管理</a>
+        </li>
+        <li><a href="order.html" th:href="@{get_all_dd}" style="color: white; text-decoration: none; font-size: 20px;">订单管理</a></li>
+        <li><a href="shuju.html" style="color: white; text-decoration: none; font-size: 20px;">数据统计</a></li>
+    </ul>
+</div>
+
+<div id="main">
+    <div id="header">
+        <h1>剧本杀后台管理系统</h1>
+        <img src="role-1.jpeg" alt="用户头像">
+    </div>
+
+    <div id="content">
+        <div id="add-script">
+            <form id="scriptForm" action="insert_jbinfo" method="get">
+                <div class="zmz">修改剧本</div>
+                剧本名称:<input type="text" maxlength="20" th:name="jb_name" th:value="${jb_name}"/>
+                剧本分类:<input type="text" maxlength="20" th:name="jb_tag" th:value="${jb_tag}"/>
+                剧本开团人数:<input type="text" maxlength="20" th:name="jb_num" th:value="${jb_num}"/>
+                剧本简介:<input type="text" maxlength="20" th:name="jb_jj" th:value="${jb_jj}"/>
+                剧本价格:<input type="text" maxlength="20" th:name="jb_price" th:value="${jb_price}"/>
+                剧本难度:<input type="text" maxlength="20" th:name="jb_nd" th:value="${jb_nd}"/>
+                剧本封面:<input type="text" maxlength="20" th:name="jb_wz" th:value="${jb_wz}"/>
+                <button type="submit" th:href="@{update_jbinfo(jb_id=${jb_id},jb_name=${jb_name},jb_tag=${jb_tag},jb_num=${jb_num},jb_jj=${jb_jj},jb_price=${jb_price},jb_nd=${jb_nd},jb_wz=${jb_wz})}" style="border-radius: 6px;;text-align: right;padding: 13px 23px;background-color:#51a951;margin-top: 12px; color: white; cursor: pointer;font-size: 14px;">修改剧本</button>
+                <button type="submit" style="border-radius: 6px;;text-align: right;padding: 13px 23px;background-color:#404240;margin-top: 12px; color: white; cursor: pointer;font-size: 14px;">关闭剧本</button>
+            </form>
+        </div>
+        </div>
+    </div>
+
+</body>
+</html>

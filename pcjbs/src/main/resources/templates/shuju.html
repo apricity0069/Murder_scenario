@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据统计</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.js"></script>
+    <link rel="stylesheet" href="../static/css/one.css" th:href="@{/css/one.css}">
+
+</head>
+<body>
+
+<div id="sidebar">
+    <h2>剧本杀后台管理</h2>
+    <ul>
+        <li ><a th:href="@{get_all_jb}" style="color: white; font-size: 20px;text-decoration: none;">剧本管理</a></li>
+        <li>
+            <a th:href="@{get_all_user}" style="color: white; text-decoration: none; font-size: 20px; ">用户管理</a>
+        </li>
+        <li><a th:href="@{get_all_dd}" style="color: white; text-decoration: none; font-size: 20px;">订单管理</a></li>
+        <li  style="background-color: #212121;" ><a th:href="@{tiaozhuan}" style="color: white; text-decoration: none; font-size: 20px;">数据统计</a></li>
+    </ul>
+</div>
+
+<div id="main">
+    <div id="header">
+        <h1>剧本杀后台管理系统</h1>
+        <img src="role-1.jpeg" alt="用户头像">
+    </div>
+
+    <!-- 图表容器 -->
+    <div id="bottom1">
+        <div id="chart0" class="chart-container"></div>
+        <div id="chart1" class="chart-container"></div>
+        <div id="chart2" class="chart-container"></div>
+        <div id="chart3" class="chart-container"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // 确保 DOM 完全加载后再初始化 ECharts 实例
+    document.addEventListener('DOMContentLoaded', function () {
+        // 初始化 chart0 的 ECharts 实例
+        var myChart0 = echarts.init(document.getElementById('chart0'));
+        // 初始化 chart1 的 ECharts 实例
+        var myChart1 = echarts.init(document.getElementById('chart1'));
+        // 初始化 chart2 的 ECharts 实例
+        var myChart2 = echarts.init(document.getElementById('chart2'));
+        // 初始化 chart3 的 ECharts 实例
+        var myChart3 = echarts.init(document.getElementById('chart3'));
+
+        // chart0 的配置项
+        var option0 = {
+            title: {
+                text: '剧本类型热度分析'
+            },
+            tooltip: {},
+            legend: {
+                data: ['玩家选择次数']
+            },
+            xAxis: {
+                data: ['情感', '推理', '阵营', '恐怖', '民国', '古风']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '热度',
+                    type: 'bar',
+                    data: [
+                        { value: 289, itemStyle: { color: '#ee6666' } }, // 橙色
+                        { value: 155, itemStyle: { color: '#91cc75' } }, // 柠檬黄
+                        { value: 136, itemStyle: { color: '#57C8FD' } }, // 天蓝色
+                        { value: 89, itemStyle: { color: '#90D7EB' } },  // 湖蓝色
+                        { value: 120, itemStyle: { color: '#fac858' } }, // 粉色
+                        { value: 220, itemStyle: { color: '#536ec3' } }  // 亮黄色
+                    ]
+                }
+            ]
+        };
+        myChart0.setOption(option0);
+
+        // chart1 的配置项（圆环图）
+        var option1 = {
+            title: {
+                text: '用户年龄层次',
+                left: 'center',
+                top: 'center'
+            },
+            series: [
+                {
+                    type: 'pie',
+                    data: [
+                        {
+                            value: 935,
+                            name: '16岁及以下'
+                        },
+                        {
+                            value: 3234,
+                            name: '17-25岁'
+                        },
+                        {
+                            value: 2048,
+                            name: '26-34岁'
+                        },
+                        {
+                            value: 548,
+                            name: '35岁及以上'
+                        }
+
+                    ],
+                    radius: ['40%', '70%']
+                }
+            ]
+        };
+        myChart1.setOption(option1);
+
+        // chart2 的配置项
+        var option2 = {
+            title: {
+                text: '去年与今年的流水对比'
+            },
+            legend: {
+                data: ['2023年', '2024年'], // 指定要显示的图例项
+                top: '0' // 可以指定图例的位置，这里设置在底部
+            },
+            xAxis: {
+                data: ['第一季度', '第二季度', '第三季度', '第四季度']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '2023年',
+                    data: [10, 22, 28, 23],
+                    type: 'line',
+                    areaStyle: {
+                        name: '2023年'
+                    }
+                },
+                {
+                    name: '2024年',
+                    data: [25, 14, 23, 35],
+                    type: 'line',
+                    areaStyle: {
+                        color: '#ff0',
+                        opacity: 0.5
+                    }
+                }
+            ]
+        };
+        myChart2.setOption(option2);
+
+        // chart3 的配置项
+        var data = [900, 345, 393, -108, -154, 135, 178, 286, -119, -361, -203];
+        var help = [];
+        var positive = [];
+        var negative = [];
+        for (var i = 0, sum = 0; i < data.length; ++i) {
+            if (data[i] >= 0) {
+                positive.push(data[i]);
+                negative.push('-');
+            } else {
+                positive.push('-');
+                negative.push(-data[i]);
+            }
+
+            if (i === 0) {
+                help.push(0);
+            } else {
+                sum += data[i - 1];
+                if (data[i] < 0) {
+                    help.push(sum + data[i]);
+                } else {
+                    help.push(sum);
+                }
+            }
+        }
+
+        var option3 = {
+            title: {
+                text: '玩家评分反馈'
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis: {
+                type: 'category',
+                splitLine: { show: false },
+                data: ['价格', '房间', 'DM', '服装', '剧本']
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                    type: 'bar',
+                    stack: 'all',
+                    itemStyle: {
+                        normal: {
+                            barBorderColor: 'rgba(0,0,0,0)',
+                            color: 'rgba(0,0,0,0)'
+                        },
+                        emphasis: {
+                            barBorderColor: 'rgba(0,0,0,0)',
+                            color: 'rgba(0,0,0,0)'
+                        }
+                    },
+                    data: [120, 200, -150, 80, 70]
+                },
+                {
+                    name: 'positive',
+                    type: 'bar',
+                    stack: 'all',
+                    data: [120, 200, 0, 80, 70]
+                },
+                {
+                    name: 'negative',
+                    type: 'bar',
+                    stack: 'all',
+                    data: [0, 0, -150, 0, 0],
+                    itemStyle: {
+                        color: '#f33'
+                    }
+                }
+            ]
+        };
+        myChart3.setOption(option3);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* pages/register/register.wxss */
+.container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 使容器充满整个视口 */
+}
+.box {
+  border: rgb(59, 59, 58) 5px solid;
+  background-color: rgba(201, 197, 197, 0.8); /* 半透明白色背景 */
+  border-radius: 10px; /* 圆角效果 */
+  padding: 20px; /* 内边距 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 轻微的阴影效果 */
+  width: 80%; /* 可以根据需要调整宽度 */
+  max-width: 400px; /* 最大宽度 */
+}
+.form-item {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 94%;
+  padding: 10px;
+  border: 2px solid rgb(43, 41, 41);
+  border-radius: 5px;
+}
+
+.register-btn {
+  background-color: #4c4e50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 94%;
+}
+
+
+

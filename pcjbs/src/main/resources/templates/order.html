@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/one.css" th:href="@{/css/one.css}">
+    <title>剧本杀后台管理</title>
+
+</head>
+<body>
+<!-- 左侧导航栏 -->
+<div id="sidebar">
+    <h2>剧本杀后台管理</h2>
+    <ul>
+        <li><a th:href="@{get_all_jb}" style="color: white; font-size: 20px;text-decoration: none;">剧本管理</a></li>
+        <li >
+            <a th:href="@{get_all_user}" style="color: white; text-decoration: none; font-size: 20px;">用户管理</a>
+        </li>
+        <li  style="background-color: #212121;" ><a th:href="@{get_all_dd}" style="color: white; text-decoration: none; font-size: 20px;">订单管理</a></li>
+        <li><a th:href="@{tiaozhuan}"  style="color: white; text-decoration: none; font-size: 20px;">数据统计</a></li>
+    </ul>
+</div>
+
+<!-- 右侧内容区域 -->
+<div id="main">
+    <div id="header">
+        <h1>剧本杀后台管理系统</h1>
+        <img src="role-1.jpeg" alt="用户头像"> <!-- 头像图标 -->
+    </div>
+
+    <!-- 管理模块内容 -->
+    <div id="bottom1">
+            <div class="search-container">
+                <form th:action="@{get_xz_dd}" method="get">
+                    <input type="text" id="searchBox" placeholder="请输入搜索内容" th:name="yyid" th:value="${yyid}" style="width: 280px;height:45px;margin-right: 10px;border-radius: 10px;" />
+                    <button type="submit" style="text-align: right;margin-left: auto;padding: 10px 17px;background-color: skyblue; color: black;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 16px;">查询</button>
+                </form></div>
+        <table  class="rounded-shadow-table">
+            <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>剧本名称</th>
+                <th>剧本标签</th>
+                <th>预约人数</th>
+                <th>剧本单价</th>
+                <th>操作</th>
+            </tr>
+
+            <!-- 数据行示例 -->
+            <tr th:each="dd:${dd}">
+                <td th:text="${dd.jb_yy_id}"></td>
+                <td th:text="${dd.jb_name}"></td>
+                <td th:text="${dd.jb_tag}"></td>
+                <td th:text="${dd.yy_num}"></td>
+                <td th:text="${dd.jb_price}"></td>
+                <td><a th:href="@{delete_a_dd(jb_yy_id=${dd.jb_yy_id})}" onclick="return deleteInfo()" style="border-radius: 6px;text-align: right;margin-right:10px;padding: 8px 15px;background-color:orangered; color: white;text-decoration: none; border: none; cursor: pointer;font-family: Arial, sans-serif;font-size: 14px;">取消订单</a >
+                    <script>
+                        function deleteInfo() {
+                            const r = confirm("确定取消该订单？");
+                            if (r) {
+                                alert("取消成功");
+                                return true;
+                            }
+                            return false;
+                        }
+                    </script></td>
+
+            </tr>
+
+
+        </table>
+
+</div>
+</body>
+</html>
